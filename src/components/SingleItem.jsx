@@ -12,11 +12,11 @@ export default function SingleItem({ item }) {
   const [input, setInput] = useState(item.name);
 
   const handleDone = () => {
-    setSavedItems (
-      savedItems.filter(elem => {
+    setSavedItems(
+      savedItems.filter((elem) => {
         return elem.id !== item.id;
       })
-    )
+    );
   };
 
   const handleEdit = () => {
@@ -55,19 +55,22 @@ export default function SingleItem({ item }) {
         </div>
       )}
 
-      <Button 
-        style={{}} 
-        variant="secondary" 
-        onClick={() => handleDone()}
-      >
-        <Check2Square style={{fontSize: '1.125rem'}}/>
+      <Button style={{}} variant="secondary" onClick={() => handleDone()}>
+        <span className="visually-hidden">check out</span>
+        <Check2Square style={{ fontSize: "1.125rem" }} />
       </Button>
-      <Button
-        style={{}}
-        variant="primary"
-        onClick={() => handleEdit()}
-      >
-        {isEdit ? <Save2 /> : <PencilSquare />}
+      <Button style={{}} variant="primary" onClick={() => handleEdit()}>
+        {isEdit ? (
+          <>
+            <span className="visually-hidden">save</span>
+            <Save2 />
+          </>
+        ) : (
+          <>
+            <span className="visually-hidden">edit</span>
+            <PencilSquare />
+          </>
+        )}
       </Button>
     </InputGroup>
   );

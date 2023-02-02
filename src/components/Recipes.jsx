@@ -15,7 +15,7 @@ export default function Recipes() {
   };
 
   return (
-    <Container>
+    <Container id="section-search" className="pt-2" style={{minHeight: '85vh'}}>
       <Row className="justify-content-center my-5">
         <Col md="8">
           <InputGroup>

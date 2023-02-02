@@ -21,9 +21,9 @@ export default function OffCanvasExample() {
   return (
     <>
       <Button
+        className="unit-btn"
         variant="outline-secondary"
         onClick={toggleShow}
-        style={{ position: "fixed", top: "4.5rem", right: ".875rem", padding: '0.25rem'}}
       >
         <div className="d-flex align-items-center gap-2"><QuestionOctagon/>Unit</div>
       </Button>
@@ -33,7 +33,7 @@ export default function OffCanvasExample() {
         </Offcanvas.Header>
         <Offcanvas.Body>
           <p>US Measurement</p>
-          <div className="d-flex gap-5">
+          <div className="unit-exp | d-flex gap-5">
             <p>1 gallon = 4 quart</p>
             <p>1 quart = 2 pin</p>
             <p>1 pin = 2 cup </p>

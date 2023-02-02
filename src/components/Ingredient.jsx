@@ -1,4 +1,4 @@
-import { Button, Dropdown, Stack } from "react-bootstrap";
+import { Button, Stack } from "react-bootstrap";
 import { ingredientFormatter } from "../utilities/ingredientFormatter";
 import { useAppContext } from "../context/AppContext";
 import { addNewItem } from "../utilities/addNewItem";

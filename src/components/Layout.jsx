@@ -7,16 +7,16 @@ export default function Layout() {
       <Navbar className="bg-white shadow-sm mb-3 px-5">
         <Container fluid>
           <Nav>
-            <Nav.Link to={"/"} as={NavLink}>
+            <Nav.Link to={"/"} as={NavLink} className='fs-5'>
               Home
             </Nav.Link>
           </Nav>
           <Nav>
           <Nav.Link to={"/likes"} as={NavLink}>
-            <BookmarkHeart className="fs-5"/>
+            <div><span className="visually-hidden">Liked recipes</span><BookmarkHeart className="fs-5"/></div>
           </Nav.Link>
           <Nav.Link to={"/tobuys"} as={NavLink}>
-            <BookmarkPlus className="fs-5"/>
+            <div><span className="visually-hidden">Tobuy items</span><BookmarkPlus className="fs-5"/></div>   
           </Nav.Link>
           </Nav>
         </Container>

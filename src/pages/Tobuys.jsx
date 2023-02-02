@@ -24,7 +24,7 @@ export default function Tobuys() {
 
   return (
     <>
-      <InputGroup className="mx-auto mb-3" style={{ maxWidth: "40rem" }}>
+      <InputGroup className="mx-auto mb-3 px-1" style={{ maxWidth: "40rem" }}>
         <Form.Control
           ref={inputRef}
           aria-label="Item add into the to buy list"
@@ -34,7 +34,7 @@ export default function Tobuys() {
           Add
         </Button>
       </InputGroup>
-      <Container fluid="true" className="mx-auto" style={{ maxWidth: "40rem" }}>
+      <Container fluid="true" className="px-1 mx-auto" style={{ maxWidth: "40rem" }}>
         {savedItems.length < 1 ? (
           <h1 className="text-center">Go Add Some Items.</h1>
         ) : (
