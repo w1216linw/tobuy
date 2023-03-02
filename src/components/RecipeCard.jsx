@@ -125,7 +125,7 @@ export default function RecipeCard({ recipe }) {
           >
             <Toast.Header>
               <strong className="m-auto">
-                {addAll === 1 ? "Added All" : like ? "Liked!" : "Unliked!"}
+                {addAll === 1 ? "Added All" : like ? "Liked!" : "Disliked!"}
               </strong>
             </Toast.Header>
           </Toast>
