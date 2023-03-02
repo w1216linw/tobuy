@@ -1,7 +1,7 @@
-import { getRecipes, setOptions } from "../utilities/getRecipes";
-import { useAppContext } from "../context/AppContext";
-import { Container, Row, Col, InputGroup, Form, Button } from "react-bootstrap";
 import { useRef } from "react";
+import { Button, Col, Container, Form, InputGroup, Row } from "react-bootstrap";
+import { useAppContext } from "../context/AppContext";
+import { getRecipes, setOptions } from "../utilities/getRecipes";
 import MasonryLayout from "./MasonryLayout";
 
 export default function Recipes() {
@@ -14,8 +14,18 @@ export default function Recipes() {
     });
   };
 
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") {
+      handleClick();
+    }
+  };
+
   return (
-    <Container id="section-search" className="pt-2" style={{minHeight: '85vh'}}>
+    <Container
+      id="section-search"
+      className="pt-2"
+      style={{ minHeight: "85vh" }}
+    >
       <Row className="justify-content-center my-5">
         <Col md="8">
           <InputGroup>
@@ -24,6 +34,7 @@ export default function Recipes() {
               placeholder="e.g. fried egg"
               aria-label="Search for recipes"
               aria-describedby="search-btn"
+              onKeyDown={handleKeyDown}
             />
             <Button
               onClick={() => handleClick()}

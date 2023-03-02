@@ -1,26 +1,18 @@
-import { Button, Stack } from "react-bootstrap";
+import { Stack } from "react-bootstrap";
 import { ingredientFormatter } from "../utilities/ingredientFormatter";
-import { useAppContext } from "../context/AppContext";
-import { addNewItem } from "../utilities/addNewItem";
-import { Plus } from "react-bootstrap-icons";
+import IngredientRow from "./IngredientRow";
 
 const Ingredient = ({ ingredients }) => {
-  const { savedItems, setSavedItems } = useAppContext();
   const ingredientsArr = ingredientFormatter(ingredients);
 
   return (
-    <Stack gap={2}>
-
-      {ingredientsArr.map((ingredient, index) => {
-        return (
-          <div key={index} className="d-flex align-items-center ">
-            <div className="me-auto">{ingredient}</div>
-            <Button className="p-0" onClick={() => addNewItem(ingredient, savedItems, setSavedItems)}><Plus className="fs-3"/></Button>
-          </div>
-        );
-      })}
-
-    </Stack>
+    <>
+      <Stack gap={2}>
+        {ingredientsArr.map((ingredient, index) => (
+          <IngredientRow ingredient={ingredient} key={index} />
+        ))}
+      </Stack>
+    </>
   );
 };
 
