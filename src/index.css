@@ -82,11 +82,15 @@ body {
 }
 
 /* unit off canvas */
+.list-container {
+  position: relative;
+}
+
 .unit-btn {
+  background-color: blue;
   position: absolute;
-  bottom: 1rem;
+  top: 3rem;
   left: 1rem;
-  padding: 0.25rem;
 }
 
 .unit-exp {

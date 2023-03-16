@@ -3,7 +3,7 @@ import MasonryLayout from "../components/MasonryLayout";
 import { useAppContext } from "../context/AppContext";
 
 export default function Likes() {
-  const { savedRecipes, setSavedRecipes } = useAppContext();
+  const { savedRecipes } = useAppContext();
   return (
     <Container>
       {savedRecipes.length < 1 ? (

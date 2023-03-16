@@ -11,8 +11,6 @@ const option = {
 };
 
 export default function OffCanvasExample() {
-
-
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -22,10 +20,14 @@ export default function OffCanvasExample() {
     <>
       <Button
         className="unit-btn"
+        size="sm"
         variant="outline-secondary"
         onClick={toggleShow}
       >
-        <div className="d-flex align-items-center gap-2"><QuestionOctagon/>Unit</div>
+        <div className="d-flex align-items-center gap-2">
+          <QuestionOctagon />
+          Unit
+        </div>
       </Button>
       <Offcanvas show={show} onHide={handleClose} {...option}>
         <Offcanvas.Header closeButton>

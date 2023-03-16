@@ -1,16 +1,10 @@
-import {
-  Container,
-  Button,
-  InputGroup,
-  Form,
-  Stack
-} from "react-bootstrap";
-import SingleItem from "../components/SingleItem";
-import { useAppContext } from "../context/AppContext";
-import { Hexagon } from "react-bootstrap-icons";
 import { useRef } from "react";
+import { Button, Container, Form, InputGroup, Stack } from "react-bootstrap";
+import { Hexagon } from "react-bootstrap-icons";
+import SingleItem from "../components/SingleItem";
+import UnitOffCanvas from "../components/UnitOffCanvas";
+import { useAppContext } from "../context/AppContext";
 import { addNewItem } from "../utilities/addNewItem";
-import UnitOffCanvas from '../components/UnitOffCanvas';
 
 export default function Tobuys() {
   const { savedItems, setSavedItems } = useAppContext();
@@ -23,18 +17,22 @@ export default function Tobuys() {
   };
 
   return (
-    <>
+    <main className="list-container">
       <InputGroup className="mx-auto mb-3 px-1" style={{ maxWidth: "40rem" }}>
         <Form.Control
           ref={inputRef}
           aria-label="Item add into the to buy list"
           aria-describedby="add-Btn"
         />
-        <Button id="add-Btn" variant="warning fw-bold text-secondary" onClick={() => handleAdd()}>
+        <Button
+          id="add-Btn"
+          variant="warning fw-bold text-secondary"
+          onClick={() => handleAdd()}
+        >
           Add
         </Button>
       </InputGroup>
-      <Container fluid="true" className="px-1 mx-auto" style={{ maxWidth: "40rem" }}>
+      <Container className="p-4 mx-auto" style={{ maxWidth: "40rem" }}>
         {savedItems.length < 1 ? (
           <h1 className="text-center">Go Add Some Items.</h1>
         ) : (
@@ -49,6 +47,6 @@ export default function Tobuys() {
         )}
       </Container>
       <UnitOffCanvas />
-    </>
+    </main>
   );
 }

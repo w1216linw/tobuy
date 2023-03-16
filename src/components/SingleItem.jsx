@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { Button, InputGroup, Form } from "react-bootstrap";
-import { useAppContext } from "../context/AppContext";
+import { Button, Form, InputGroup } from "react-bootstrap";
 import { Check2Square, PencilSquare, Save2 } from "react-bootstrap-icons";
+import { useAppContext } from "../context/AppContext";
 
 export default function SingleItem({ item }) {
   //items list
@@ -49,7 +49,10 @@ export default function SingleItem({ item }) {
       ) : (
         <div
           className="d-flex align-items-center border border-info bg-white rounded-start"
-          style={{ flexGrow: "1", paddingLeft: "0.75rem" }}
+          style={{
+            flexGrow: "1",
+            paddingLeft: "0.75rem",
+          }}
         >
           {item.name}
         </div>
