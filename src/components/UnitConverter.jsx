@@ -1,5 +1,4 @@
-import { useEffect } from "react";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Col, Row } from "react-bootstrap";
 import { convert } from "../utilities/converterCalc";
 
@@ -17,12 +16,16 @@ export default function UnitConverter() {
 
   useEffect(() => {
     setToValue(convert(fromUnit, toUnit, fromValue));
-  },[fromValue, fromUnit, toUnit])
+  }, [fromValue, fromUnit, toUnit]);
 
   return (
     <Row>
       <Col md="12" className="d-flex justify-content-center">
-        <input type="number" value={fromValue} onChange={(e) => setFromValue(e.target.value)} />
+        <input
+          type="number"
+          value={fromValue}
+          onChange={(e) => setFromValue(e.target.value)}
+        />
         <select
           name="fromUnit"
           id="fromUnit"
@@ -38,9 +41,14 @@ export default function UnitConverter() {
           ))}
         </select>
         <span className="mx-2">=</span>
-        <select name="toUnit" id="toUnit" ref={toUnitRef} onChange={() => {
+        <select
+          name="toUnit"
+          id="toUnit"
+          ref={toUnitRef}
+          onChange={() => {
             setToUnit(toUnitRef.current.value);
-          }}>
+          }}
+        >
           {units.map((unit) => (
             <option key={unit} value={unit}>
               {unit}
